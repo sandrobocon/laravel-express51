@@ -19,6 +19,8 @@
 Route::get('test/{name}', 'TestController@index');
 Route::get('notas', 'TestController@notas');
 
+Route::get('blog', 'PostsController@index');
+
 // Blog
 Route::get('/', 'BlogController@index');
 Route::get('about', 'BlogController@about');
