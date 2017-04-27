@@ -20,10 +20,15 @@
 //Route::get('notas', 'TestController@notas');
 
 Route::get('/', 'PostsController@index');
+Route::get('/home', 'PostsController@index');
 
 
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 
-Route::group(['prefix'=>'admin'], function() {
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function() {
 
     Route::group(['prefix'=>'posts'], function() {
 
